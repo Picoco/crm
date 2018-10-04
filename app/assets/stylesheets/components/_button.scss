@@ -1,0 +1,45 @@
+.btn-modifications {
+  text-align: center;
+  background-color: $blue;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 3px;
+  opacity:1;
+  font-size:14px;
+}
+
+.btn-modifications:hover {
+  opacity: 0.8;
+  color: white;
+  text-decoration: none;
+}
+
+
+.btn-cancel {
+  text-align: center;
+  color: $gray;
+  border: 1px solid $gray;
+  padding: 10px 15px;
+  border-radius: 3px;
+  opacity:1;
+  font-size:14px;
+}
+
+.btn-cancel:hover {
+  opacity: 0.8;
+  color: $gray;
+  text-decoration: none;
+}
+
+
+.btn-import {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: $blue;
+  padding: 2px 10px;
+}
+
+.btn-import:hover {
+  text-decoration: none;
+}

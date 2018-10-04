@@ -1,0 +1,61 @@
+.line-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $light-gray;
+  padding: 5px 12px;
+  p {
+    color: $blue;
+    margin: 0px;
+  }
+}
+
+
+.line-index-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $light-gray;
+  padding: 5px 12px;
+  p {
+    color: $blue;
+    margin: 0px;
+    font-weight: bold;
+  }
+}
+
+
+.inside-index {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 220px;
+}
+
+.mail-index {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 320px;
+}
+
+.status {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 110px;
+}
+#contacted {
+  background-color: $green;
+}
+#not-contacted {
+  background-color: $red;
+}
+#on-going {
+  background-color: $yellow;
+}
