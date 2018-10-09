@@ -44,7 +44,7 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:email, :number, :first_name, :last_name, :address, :user_id, :state_id)
   end
 
-  def set_restaurant
+  def set_contact
     @contact = Contact.find(params[:id])
   end
 end

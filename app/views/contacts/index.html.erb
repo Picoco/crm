@@ -1,1 +1,26 @@
-<p>hello world from the index</p>
+<div class="container">
+  <div class="line-index-title">
+    <div class="inside-index"><p>Nom</p></div>
+    <div class="inside-index"><p>Prénom</p></div>
+    <div class="inside-index"><p>Ville</p></div>
+    <div class="mail-index"><p>Mail</p></div>
+    <div class="status" style="color: $blue; font-size: 18px"><p>Statut</p></div>
+  </div>
+  <% @contacts.each do |contact| %>
+    <%= link_to contact_path(contact) do %>
+      <div class="line-index">
+        <div class="inside-index"><p><%= contact.last_name %></p></div>
+        <div class="inside-index"><p><%= contact.first_name %></p></div>
+        <div class="inside-index"><p><%= contact.address %></p></div>
+        <div class="mail-index"><p><%= contact.email %></p></div>
+        <% if contact.state.category == "not-contacted" %>
+          <div class="status" id="<%= contact.state.category %>"><p>À contacter</p></div>
+        <% elsif contact.state.category == "called" %>
+          <div class="status" id="<%= contact.state.category %>"><p>Contacté</p></div>
+        <% else %>
+          <div class="status" id="<%= contact.state.category %>"><p>En cours</p></div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_143403) do
+ActiveRecord::Schema.define(version: 2018_10_09_144336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,16 +25,23 @@ ActiveRecord::Schema.define(version: 2018_10_04_143403) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "state_id"
+    t.integer "grade"
     t.index ["state_id"], name: "index_contacts_on_state_id"
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
-  create_table "states", force: :cascade do |t|
-    t.string "category"
-    t.integer "grade"
+  create_table "logs", force: :cascade do |t|
+    t.string "comment"
+    t.bigint "contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "comment"
+    t.index ["contact_id"], name: "index_logs_on_contact_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +58,5 @@ ActiveRecord::Schema.define(version: 2018_10_04_143403) do
 
   add_foreign_key "contacts", "states"
   add_foreign_key "contacts", "users"
+  add_foreign_key "logs", "contacts"
 end
