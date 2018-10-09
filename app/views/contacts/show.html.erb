@@ -1,1 +1,43 @@
-<p>hello world from the show</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <h3>Nom</h3>
+      <p><%= @contact.last_name.capitalize %></p>
+    </div>
+    <div class="col-xs-4">
+      <h3>Prénom</h3>
+      <p><%= @contact.first_name.capitalize %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <h3>Téléphone</h3>
+      <% if @contact.number.nil? %>
+        <p>Non renseigné</p>
+      <% else %>
+        <p><%= @contact.number %></p>
+      <% end %>
+    </div>
+    <div class="col-xs-4">
+      <h3>Mail</h3>
+      <p><%= @contact.email %></p>
+    </div>
+    <div class="col-xs-4">
+      <h3>Adresse</h3>
+      <p><%= @contact.address %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <h3>État</h3>
+      <p><%= @contact.state.category %></p>
+    </div>
+    <div class="col-xs-4">
+      <h3>Note</h3>
+      <p><%= @contact.grade %></p>
+    </div>
+  </div>
+  <i class="fas fa-undo"></i>
+  <i class="fas fa-trash"></i>
+  <i class="fas fa-edit"></i>
+</div>
