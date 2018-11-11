@@ -1,5 +1,15 @@
 <div class="container">
+  <h2>Ajouter un nouveau contact</h2>
+  <%= simple_form_for(@contact) do |f| %>
+    <%= f.input :last_name, label: 'Nom' %>
+    <%= f.input :first_name, label: 'Prénom' %>
+    <%= f.input :number, label: 'Téléphone' %>
+    <%= f.input :email, label: 'Mail' %>
+    <%= f.input :address, label: 'Adresse' %>
+    <%= f.association :state, label: "État", collection: State.order(:category), label_method: :category, value_method: :id, prompt: "Choisir un état" %>
+    <%= f.input :grade, label: 'Note', collection:[1, 2, 3, 4, 5]  %>
+    <%= f.submit 'Créer le contact', class:'btn-modifications' %>
+  <% end %>
 
-  <p>hello world from the new</p>
 
 </div>

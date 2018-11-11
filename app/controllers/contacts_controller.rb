@@ -11,12 +11,16 @@ class ContactsController < ApplicationController
 
   def new           # GET /restaurants/new
     @contact = Contact.new
+    @states = State.all
   end
 
-  def create        # POST /restaurants
+  def create       # POST /restaurants
     @contact = Contact.new(contact_params)
-    @contact.save
-    redirect_to contact_path(@contact)
+    if @contact.save
+      redirect_to contact_path(params[:id])
+    else
+      render :new
+    end
   end
 
   def edit          # GET /restaurants/:id/edit
@@ -25,7 +29,6 @@ class ContactsController < ApplicationController
 
 
   def update        # PATCH /restaurants/:id
-
     @contact.update(contact_params)
     redirect_to contact_path(@contact)
   end
